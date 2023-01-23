@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+</style>
+</head>
+
+{% extends 'base.html' %}
+
+{% block content %}
+
+<body>
+<table>
+  <tr>
+    <h1> General Network Scripts</h1>
+  </tr>
+  <tr>
+    <th>Config Backup</th>
+    <th></th>
+    <th>Internet Info</th>
+  </tr>
+  <tr>
+    <td>
+      <form action="/config_backup", method="post">
+        <!--<div class="mb-3">
+            <input class="form-control" name ="username" id="username" placeholder="username">
+        </div>
+        <div class="mb-3">
+            <input type="password" class="form-control" name="password" id="password" placeholder="password">
+        </div>-->
+        <div class="mb-3">
+        <input class="form-control" name="hostname" id="hostname" placeholder="hostname">
+        </div>
+        <input class="btn btn-secondary" type="submit" name="form" value="Backup" />
+      </form>
+    </td>
+    <td></td>
+    <td>
+        <form action="/inet_stats", method="post">
+            <!--<div class="mb-3">
+                <input class="form-control" name ="username" id="username" placeholder="username">
+            </div>
+            <div class="mb-3">
+                <input type="password" class="form-control" name="password" id="password" placeholder="password">
+            </div>-->
+            <input class="btn btn-secondary" type="submit" name="form" value="Get Internet Stats" />
+        </form><br>
+        <form action="bgp_neigh", method="post">
+            <input class="btn btn-secondary" type="submit" name="form" value="Get Neighbors" />
+        </form>
+    </td>
+  </tr>
+</table>
+</br>
+<table>
+  <tr>
+    <td>
+      <textarea class="form-control" id="status" name="status" rows="25" cols="100">{{ status }}</textarea>
+    </td>
+  </tr>
+</table>
+</body>
+
+{% endblock %}
+
+
+</html>

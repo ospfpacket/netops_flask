@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+</style>
+</head>
+
+{% extends 'base.html' %}
+
+{% block content %}
+
+<body>
+
+<table>
+  <tr>
+    <th>Create</th>
+    <th>Delete</th>
+    <th>Group</th>
+  </tr>
+  <tr>
+    <td>
+      <form action="/ise_create", method="post">
+        MAC Address
+        <textarea type="text" class="form-control" id="mac_addr" name="mac_addr" rows="10" cols="25"></textarea>
+        <input class="btn btn-secondary" type="submit" name="form" value="Submit" />
+      </form>
+    </td>
+    <td>
+      <form action="/ise_delete", method="post">
+        MAC Address
+        <textarea type="text" class="form-control" id="mac_addr" name="mac_addr" rows="10" cols="25"></textarea>
+        <input class="btn btn-secondary" type="submit" name="form" value="Submit" />
+      </form>
+    </td>
+    <td>
+        <form action="/ise_group", method="post">
+          MAC Address
+          <textarea type="text" class="form-control" id="mac_addr" name="mac_addr" rows="10" cols="25"></textarea>
+          <select name="Endpoint Group">
+            <option value="group 1 name">group 1 name</option>           #adjust for your context
+            <option value="group 2 name">group 2 name</option>           #adjust for your context
+            <option value="group 3 name">group 3 name</option>           #adjust for your context
+            <option value="group 4 name">group 4 name</option>           #adjust for your context
+          </select>
+          <input class="btn btn-secondary" type="submit" name="form" value="Submit" />
+        </form>
+      </td>
+  </tr>
+</table>
+</br>
+<table>
+  <tr>
+    <td>
+      <textarea class="form-control" id="status" name="status" rows="10" cols="89">{{ status }}</textarea>
+    </td>
+  </tr>
+</table>
+</body>
+
+{% endblock %}
+
+</html>

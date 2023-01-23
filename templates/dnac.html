@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+</style>
+</head>
+
+{% extends 'base.html' %}
+
+{% block content %}
+
+<body>
+<table>
+  <tr>
+    <h1> Gather Device Information</h1>
+  </tr>
+  <tr>
+    <th>By IP</th>
+    <td></td>
+    <th>By MAC</th>
+  </tr>
+  <tr>
+    <td>
+      <form action="/dnac_ip", method="post">
+        <input type="text" class="form-control" id="ip_addr" name="ip_addr">
+        <input class="btn btn-secondary" type="submit" name= "form" value="Submit" />
+      </form>
+    </td>
+    <td></td>
+    <td>
+      <form action="/dnac_mac", method="post">
+        <input type="text" class="form-control" id="mac_addr" name="mac_addr">
+        <input class="btn btn-secondary" type="submit" name= "form" value="Submit" />
+      </form>
+    </td>
+  </tr>
+</table>
+</br>
+<table>
+  <tr>
+    <td>
+      <textarea class="form-control" id="status" name="status" rows="10" cols="80">{{ status }}</textarea>
+    </td>
+  </tr>
+</table>
+</body>
+
+{% endblock %}
+
+
+</html>
